@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+    <title>Gestor de Trimado</title>
+
+    <!-- PWA -->
+
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="theme-color" content="#0056b3">
+
+    <!-- iPhone -->
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <meta name="apple-mobile-web-app-title" content="Trimado">
+
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+    <div>
+
+        <h1>Gestor de Trimado</h1>
+
+        <span id="appVersion">
+            v2.0 Professional
+        </span>
+
+    </div>
+
+    <div class="headerButtons">
+
+        <button id="installBtn" hidden>
+
+            Instalar App
+
+        </button>
+
+        <button id="importBtn">
+
+            Importar
+
+        </button>
+
+        <button id="settingsBtn">
+
+            Ajustes
+
+        </button>
+
+        <button id="pdfBtn">
+
+            PDF
+
+        </button>
+
+    </div>
+
+</header>
+
+<main>
+
+<section class="selectors">
+
+<div class="field">
+
+<label>Clase</label>
+
+<select id="mainClassSelect">
+
+<option value="">Seleccionar...</option>
+
+</select>
+
+</div>
+
+<div class="field">
+
+<label>Barco</label>
+
+<select id="mainBoatSelect">
+
+<option value="">Seleccionar...</option>
+
+</select>
+
+</div>
+
+<div class="actions">
+
+<button id="newConfigBtn">
+
+Nueva Configuración
+
+</button>
+
+<button id="shareBoatBtn">
+
+Compartir barco
+
+</button>
+
+</div>
+
+</section>
+
+<section class="tableCard">
+
+<h2 id="tableTitle">
+
+Selecciona una clase
+
+</h2>
+
+<div class="tableWrapper">
+
+<table id="trimTable">
+
+<thead>
+
+<tr id="tableHeader">
+
+</tr>
+
+</thead>
+
+<tbody id="tableBody">
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- MODAL CONFIGURACIÓN -->
+
+<div
+    id="configModal"
+    class="modal hidden">
+
+<div class="modalContent">
+
+<button class="closeModal">
+
+✕
+
+</button>
+
+<h2 id="modalTitle">
+
+Configuración
+
+</h2>
+
+<div id="configForm">
+
+</div>
+
+<textarea
+    id="configObs"
+    placeholder="Observaciones">
+
+</textarea>
+
+<div class="modalButtons">
+
+<button id="saveConfig">
+
+Guardar
+
+</button>
+
+<button id="deleteConfig">
+
+Eliminar
+
+</button>
+
+<button id="shareConfig">
+
+Compartir
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MODAL AJUSTES -->
+
+<div
+    id="settingsModal"
+    class="modal hidden">
+
+<div class="modalContent">
+
+<button class="closeModal">
+
+✕
+
+</button>
+
+<h2>
+
+Ajustes
+
+</h2>
+
+<div id="settingsList">
+
+</div>
+
+<button id="saveSettings">
+
+Guardar
+
+</button>
+
+</div>
+
+</div>
+
+<!-- MODAL IMPORTAR -->
+
+<div
+    id="importModal"
+    class="modal hidden">
+
+<div class="modalContent">
+
+<button class="closeModal">
+
+✕
+
+</button>
+
+<h2>
+
+Importar
+
+</h2>
+
+<textarea
+    id="importCodeArea">
+
+</textarea>
+
+<button id="processImport">
+
+Importar datos
+
+</button>
+
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script type="module" src="js/app.js"></script>
+
+</body>
+
+</html>
